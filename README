@@ -1,0 +1,95 @@
+Shared Shopping List
+
+This is an application that extends the idea of shopping lists with option to share some items on the list with some "friend", or better family member.
+It is a small REST API, written in Python3, using Flask, Flask-RestFul, and SQLAlchemy for dealing with Database. For authentication, it is using JSON Web Tokens with Flaks-JWT.
+
+API end points:
+
+User:
+
+/register
+POST
+{
+   "username": "username",
+   "email": "email",
+   "password": "password
+}
+
+/auth
+POST
+{
+   "username": "username",
+   "password": "password"
+}
+
+
+Friend:
+
+/friends
+GET
+- get list of all friends
+
+/friend/<friend_un>
+GET
+- find friend
+POST
+- add friend
+DELETE
+- delete friend
+
+
+Friendship Messages:
+
+/friendship_messages
+GET
+- get all messages, friendship requests and responses
+
+/friendship
+POST
+{
+   "action": "accept" ("decline"),
+   "request_pid": "..."
+}
+
+
+Items
+
+/items
+GET
+- get all items
+
+/item/<name>
+GET
+- get specific item
+POST
+{
+   "amount": "amount",
+   "comment": "comment"
+}
+- create item
+PUT
+{
+   "amount": "amount",
+   "comment": "comment"
+}
+- edit item
+DELETE 
+- delete item
+
+/item/<item_name>/<friend_un>
+POST
+- share item with friend
+DELETE
+- unshare item with friend
+
+/item/important/<item_name>
+POST
+- mark item as important 
+DELETE
+- unmark item as important
+
+/item/done/<item_name>
+POST 
+- mark item as done
+DELETE 
+- unmark item as done
