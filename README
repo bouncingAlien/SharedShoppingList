@@ -1,5 +1,7 @@
 Shared Shopping List
 
+My final project for HarvardX: CS50 Introduction to Computer Science
+
 This is an application that extends the idea of shopping lists with option to share some items on the list with some "friend", or better family member.
 It is a small REST API, written in Python3, using Flask, Flask-RestFul, and SQLAlchemy for dealing with Database. For authentication, it is using JSON Web Tokens with Flaks-JWT.
 
